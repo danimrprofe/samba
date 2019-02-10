@@ -32,9 +32,7 @@ Configuración de smb.conf
   writable = yes
   guest ok = yes
 ```
-Se puede acceder a través de \\IPdelServer\isos
-Donde nombre es el nombre del usuario con el que queremos acceder.
-Nos llevaría a /srv/samba/public
+Se puede acceder a través de \\IPdelServer\isos. Nos llevaría a la carpeta del servidor: /srv/samba/public
 ## Comprobar configuración samba
 ```
 testparm
