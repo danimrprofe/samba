@@ -1,4 +1,4 @@
-# samba
+# Crear recursos compartidos SAMBA
 ## Compartir las carpetas home
 Configuración de smb.conf
 ```
@@ -42,5 +42,37 @@ testparm
 sudo systemctl restart smdb
 sudo systemctl restart nmbd
 ```
+# Conectar a recursos compartidos a través de shell
+## Escanear la red en búsqueda de hosts SMB
+```
+sudo findsmb
+```
+También podríamos ver una representación textual en forma de árbol de las carpetas e impresoras compartidas por vecinos de red:
+```
+sudo smbtree
+```
+En concreto podemos listar los servicios ofrecidos por un servidor para usuarios anónimos:
+```
+smbclient -L IPdelServidor
+```
+Si queremos listar los recursos para un usuario concreto (nos pedirá su contraseña):
+```
+smbclient -L IPdelServidor -U nombredelusuario
+```
 
+## conexión con smbclient
+Desde terminal, conectaríamos de la siguiente manera:
+```
+smbclient //IPdelServer/nombredelrecurso
+```
+Luego podemos subir archivos o descargar al estilo FTP
+```
+put nombrearchivo
+get nombrearchivo
+```
+También podemos conectar y ejecutar comandos en una línea
+```
+smbclient //IPdelServer/nombredelrecurso -c 'put nombredearchivo'
+smbclient //IPdelServer/nombredelrecurso -c 'ls'
+```
 
