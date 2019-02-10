@@ -35,8 +35,10 @@ Configuración de smb.conf
 Se puede acceder a través de \\IPdelServer\isos
 Donde nombre es el nombre del usuario con el que queremos acceder.
 Nos llevaría a /srv/samba/public
-## Comprobar configuración
+## Comprobar configuración samba
+```
 testparm
+```
 ## Reiniciar servidor
 ```
 sudo systemctl restart smdb
