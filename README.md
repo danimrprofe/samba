@@ -23,8 +23,9 @@ Configuración de smb.conf
 ## Comprobar configuración
 testparm
 ## Reiniciar servidor
-Systemctl restart smdb
+```
+sudo systemctl restart smdb
 sudo systemctl restart nmbd
-
+```
 
 
