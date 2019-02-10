@@ -1,5 +1,19 @@
 # samba
-## Configuración de carpeta anónima
+## Compartir las carpetas home
+Configuración de smb.conf
+```
+[homes]
+Comment = Carpetas home de usuarios
+Browseable = yes
+Read only = no
+Create mask = 0700
+Directory mask = 0700
+valid users = %S
+```
+Se puede acceder a través de \\IPdelServer\nombre
+Donde nombre es el nombre del usuario con el que queremos acceder.
+Nos llevaría a /home/nombre
+## Compartir una carpeta públicamente
 
 Crear carpeta en el servidor
 ```
@@ -20,6 +34,9 @@ Configuración de smb.conf
   writable = yes
   guest ok = yes
 ```
+Se puede acceder a través de \\IPdelServer\isos
+Donde nombre es el nombre del usuario con el que queremos acceder.
+Nos llevaría a /srv/samba/public
 ## Comprobar configuración
 testparm
 ## Reiniciar servidor
