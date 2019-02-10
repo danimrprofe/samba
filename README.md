@@ -42,6 +42,19 @@ testparm
 sudo systemctl restart smdb
 sudo systemctl restart nmbd
 ```
+# Creación de usuarios samba
+Para que un usuario pueda utilizar samba tenemos que utilizar el comando smbpasswd. Podemos agregar un usuario existente en el sistema a samba:
+```
+sudo smbpasswd -a nombredelusuario
+```
+Del mismo modo, podemos eliminarlo de samba
+```
+sudo smbpasswd -x nombredelusuario
+```
+Para consultar los usuarios samba:
+```
+sudo pdbedit -v -L
+```
 # Conectar a recursos compartidos a través de shell
 ## Escanear la red en búsqueda de hosts SMB
 ```
