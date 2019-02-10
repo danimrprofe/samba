@@ -10,9 +10,7 @@ Create mask = 0700
 Directory mask = 0700
 valid users = %S
 ```
-Se puede acceder a través de \\IPdelServer\nombre
-Donde nombre es el nombre del usuario con el que queremos acceder.
-Nos llevaría a /home/nombre
+Se puede acceder a través de \\IPdelServer\nombre, donde nombre es el nombre del usuario con el que queremos acceder. Nos llevaría a la carpeta /home/nombre
 ## Compartir una carpeta públicamente
 
 Crear carpeta en el servidor
