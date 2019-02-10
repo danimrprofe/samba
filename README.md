@@ -76,3 +76,21 @@ smbclient //IPdelServer/nombredelrecurso -c 'put nombredearchivo'
 smbclient //IPdelServer/nombredelrecurso -c 'ls'
 ```
 
+# Montar un recurso compartido en nuestro sistema de archivos
+
+Instalamos el paquete del sistema de archivos CIFS
+```
+sudo apt install cifs-utils
+```
+Creamos el punto de montaje:
+```
+sudo mkdir /mnt/nombredecarpeta/
+```
+Montamos la carpeta:
+```
+sudo mount -t cifs -v //IPdelServidor/nombredelrecurso /mnt/nombredecarpeta
+```
+A partir de aquí, una vez montada la carpeta, podemos acceder a ella en /mnt/nombredecarpeta, como si de una carpeta local se tratara. Para desmontar el recurso:
+```
+sudo umount /mnt/nombredecarpeta
+```
